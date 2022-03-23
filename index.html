@@ -241,14 +241,14 @@
                     };
 
                 var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
-                    marker = createMarker(new kakao.maps.LatLng(parseFloat(msg[i].latitude),parseFloat (msg[i].longitude)), markerImage);
+                    marker = createMarker(new kakao.maps.LatLng(parseFloat(msg[i].latitude),parseFloat(msg[i].longitude)), markerImage);
                 coffeeMarkers.push(marker);
                 (function (marker, place) {
                     kakao.maps.event.addListener(marker, 'click', function () {
                         infowindow.open(map, marker);
                         sendBack();
                     });
-                })(marker, new kakao.maps.LatLng(parseFloat(msg[i].latitude),parseFloat (msg[i].longitude)));
+                })(marker, new kakao.maps.LatLng(parseFloat(msg[i].latitude),parseFloat(msg[i].longitude)));
             }
         }
         
