@@ -81,6 +81,26 @@
         .category .ico_k5 {
             background-position: -10px -200px;
         }
+        
+        #main ul li{
+            backgrouund-color: brown;
+            width: 150px;
+            border: 1px solid white;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            float: left;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            position: relative;
+        }
+        
+        #main ul li:hover{
+            bacrground-color: green;
+        }
+
+
     </style>
     <script type="text/javascript"
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c1997b2868fa20700ce0e899c956fd4"></script>
@@ -179,7 +199,7 @@
         createCarparkMarkers(); // 주차장 마커를 생성하고 주차장 마커 배열에 추가합니다
 
         changeMarker('coffee'); // 지도에 커피숍 마커가 보이도록 설정합니다    
-        var iwContent = '<div style="padding:5px;">테스트 치과입니다'+
+        var iwContent = '<div id="menu" style="padding:5px;">테스트 치과입니다'+
                             '<li>'+
                               '<ul>'+
                                  '<li><a>병원페이지 </a></li>'+
