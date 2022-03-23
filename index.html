@@ -382,10 +382,11 @@
             JavaScriptChannel.postMessage(msg);
         }
         
-        function appToWeb(msg, msg2) {
+        function appToWeb(msg) {
             console.log('app To back licked');
-            console.log(msg);
-            console.log(msg2);
+            var obj = JSON.parse(msg);
+            console.log(obj);
+            //console.log(msg2);
             //JavaScriptChannel.postMessage(msg);
         }
         
