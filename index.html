@@ -230,6 +230,33 @@
 
             return marker;
         }
+        
+        function createHospitalMarkers(msg) {
+            for (var i = 0; i < msg.length; i++) {
+
+                var imageSize = new kakao.maps.Size(22, 26),
+                    imageOptions = {
+                        spriteOrigin: new kakao.maps.Point(10, 0),
+                        spriteSize: new kakao.maps.Size(36, 98)
+                    };
+
+                var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
+                    marker = createMarker(new kakao.maps.LatLng(parseFloat(msg[i].latitude),parseFloat (msg[i].longitude)), markerImage);
+                coffeeMarkers.push(marker);
+                (function (marker, place) {
+                    kakao.maps.event.addListener(marker, 'click', function () {
+                        infowindow.open(map, marker);
+                        sendBack();
+                    });
+                })(marker, new kakao.maps.LatLng(parseFloat(msg[i].latitude),parseFloat (msg[i].longitude));
+            }
+        }
+        
+        function setHospitalMarkers(map) {
+            for (var i = 0; i < coffeeMarkers.length; i++) {
+                coffeeMarkers[i].setMap(map);
+            }
+        }
 
         function createCoffeeMarkers() {
             for (var i = 0; i < coffeePositions.length; i++) {
@@ -385,7 +412,7 @@
         function appToWeb(msg) {
             console.log('app22 To back licked');
             //var obj = JSON.parse(msg);
-            console.log(msg[0].hname);
+            console.log(parseFloat(msg[0].latitude));
             //console.log(msg2);
             //JavaScriptChannel.postMessage(msg);
         }
