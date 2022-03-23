@@ -49,7 +49,7 @@
             list-style: none;
             float: left;
             width: 80px;
-            height: 25px;
+            height: 50px;
             padding-top: 5px;
             cursor: pointer;
         }
@@ -102,11 +102,11 @@
                     <span class="ico_commm"></span>
                     치과전문의
                 </li>
-                <li id="carparkMenu" onclick="changeMarker('k4')">
+                <li id="k4" onclick="changeMarker('k4')">
                     <span class="ico_commm"></span>
                     물리치료보유치과
                 </li>
-                <li id="carparkMenu" onclick="changeMarker('k5')">
+                <li id="k5" onclick="changeMarker('k5')">
                     <span class="ico_commm"></span>
                     치과
                 </li>
@@ -278,11 +278,15 @@
             var coffeeMenu = document.getElementById('coffeeMenu');
             var storeMenu = document.getElementById('storeMenu');
             var carparkMenu = document.getElementById('carparkMenu');
+            var k4 = document.getElementById('k4');
+            var k5 = document.getElementById('k5');
             if (type === 'coffee') {
 
                 coffeeMenu.className = 'menu_selected';
                 storeMenu.className = '';
                 carparkMenu.className = '';
+                k4.className = '';
+                k5.className = '';
 
                 setCoffeeMarkers(map);
                 setStoreMarkers(null);
@@ -296,6 +300,8 @@
                 coffeeMenu.className = '';
                 storeMenu.className = 'menu_selected';
                 carparkMenu.className = '';
+                k4.className = '';
+                k5.className = '';
 
                 setCoffeeMarkers(null);
                 setStoreMarkers(map);
@@ -310,10 +316,35 @@
                 coffeeMenu.className = '';
                 storeMenu.className = '';
                 carparkMenu.className = 'menu_selected';
+                k4.className = '';
+                k5.className = '';
 
                 setCoffeeMarkers(null);
                 setStoreMarkers(null);
                 setCarparkMarkers(map);
+
+
+            }
+             else if (type === 'k4') {
+
+                coffeeMenu.className = '';
+                storeMenu.className = '';
+                carparkMenu.className = '';
+                k4.className = 'menu_selected';
+                k5.className = '';
+
+                
+
+
+            }else if (type === 'k5') {
+
+                coffeeMenu.className = '';
+                storeMenu.className = '';
+                carparkMenu.className = '';
+                k4.className = '';
+                k5.className = 'menu_selected';
+
+                
 
 
             }
