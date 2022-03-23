@@ -202,8 +202,8 @@
         var iwContent = '<div class="menutab" style="padding:5px;">테스트 치과입니다'+
                             '<li>'+
                               '<ul>'+
-                                 '<li><a>병원페이지 </a></li>'+
-                                 '<li><a>나로부터거리 </a></li>'+    
+                                 '<li><a onclick="onPageHospital();">병원페이지 </a></li>'+
+                                 '<li><a onclick="calDistance();">나로부터거리 </a></li>'+    
                               '</ul>'+
                            '</li>'+
                         '</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
@@ -213,8 +213,13 @@
             content: iwContent,
         });
 
+        function calDistance() {
+            console.log('calDistance ....');
+        }
         
-
+        function onPageHospital() {
+            console.log('onPageHospital ....');
+        }
 
         function createMarkerImage(src, size, options) {
             var markerImage = new kakao.maps.MarkerImage(src, size, options);
